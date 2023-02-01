@@ -19,6 +19,6 @@ planilha = st.file_uploader(
     type=['.xlsx', '.csv']
 )
 
-# if planilha:
-#   df = pd.read_excel(planilha)
-#   st.success('Planilha recebida!')
+if planilha:
+  df = pd.read_excel(planilha)
+  st.success('Planilha recebida!')
