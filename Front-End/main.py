@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 
 # -------------------- INTERFACE --------------------
 st.header('Automação para disparo de mensagens no WhatsApp')
