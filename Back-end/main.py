@@ -6,47 +6,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-# -------------------- CRIANDO FUNCTIONS --------------------
-def enviarMensagens(dataFrame):
-    for linha in dataFrame:
-        mensagem = dataFrame.loc[linha, 'Mensagem:']
-        telefone = dataFrame.loc[linha, 'Telefone:']
-        texto = urllib.parse.quote(mensagem)
-        link = f'https://web.whatsapp.com/send?phone={telefone}&text={texto}'
-        return link
-        # navegador.get(link)
-        # while len(navegador.find_elements(By.ID, 'side')) < 1:
-        #     time.sleep(1)
-        # time.sleep(5)
-        # if len(navegador.find_elements(By.XPATH, '//*[@id="app"]/div/span[2]/div/span/div/div/div/div/div/div[1]')) < 1:
-        #     navegador.find_element(
-        #         By.XPATH, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button/span').click()
-        # time.sleep(3)
-
-
-# -------------------- INTERFACE --------------------
-st.header('Automação para disparo de mensagens no WhatsApp')
-
-st.markdown('''
-        ##### **Siga o modelo abaixo para preencher sua planilha**, caso a planilha upada na ferramenta não esteja no formato correto os envios podem não ser concluídos.
-''')
-
-st.table({
-    'Telefone': ['21999990000', '21900009999', '21911112222'],
-    'Mensagem': ['Olá, tudo bem?', 'Olá, tudo bem?', 'Olá, tudo bem?']
-})
-
-# upload planilha
-planilha = st.file_uploader(
-    '**Faça aqui o upload da sua planilha** :arrow ',
-    type=['.xlsx', '.csv']
-)
-
-if planilha:
-  df = pd.read_excel(planilha)
-  st.success('Planilha recebida!')
-
-
 # # tratando a base de dados
 # # removendo as colunas desnecessárias
 # df.drop('Nome:', axis=1, inplace=True)
