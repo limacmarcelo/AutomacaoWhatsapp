@@ -20,5 +20,4 @@ planilha = st.file_uploader(
 )
 
 if planilha:
-  df = pd.read_excel(planilha)
-  st.success('Planilha recebida!')
+    st.success('Planilha recebida!')
