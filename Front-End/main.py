@@ -31,7 +31,6 @@ if planilha and mensagem:
   on_click=armazenar_planilha(planilha)
   df = armazenar_planilha(planilha)
   df['Mensagem teste:'] = mensagem
+  imprimir = st.dataframe(df)
 else:
   st.warning('Preencha todos os campos.')
-
-st.dataframe(df)
