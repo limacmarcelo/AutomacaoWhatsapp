@@ -9,12 +9,8 @@ from selenium.webdriver.common.by import By
 def armazenar_planilha(lista):
   df = pd.read_excel(lista)
   return df
-# -------------------- INTERFACE --------------------
+# ------------------------------ INTERFACE ------------------------------
 st.header('Automação para disparo  WhatsApp')
-
-# st.dataframe({
-#     'Telefone': ['21999990000', '21900009999', '21911112222'],
-# })
 
 with st.form(key='disparo', clear_on_submit=True):
   mensagem = st.text_area('**Insira a mensagem que deseja disparar em massa:**', placeholder='Ola, tudo bem? \n\nSeja bem-vindo a ...')
@@ -27,17 +23,13 @@ with st.form(key='disparo', clear_on_submit=True):
 
 if enviar == True:
   if mensagem and planilha and aceito_termos:
+    
     st.success('Informações enviadas com sucesso.')
   else:
     st.warning('Preencha todos os campos corretamente.')
 
-# if enviar == True:
-#   pd.read_excel(planilha)
-#   df = planilha
 
-# print(df)
-
-
+# ------------------------------ BACK-END ------------------------------
 
 
 # # tratando a base de dados
